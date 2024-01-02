@@ -16,6 +16,7 @@
 		B77004A72B44472A00E7EEBA /* NavigationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77004A62B44472A00E7EEBA /* NavigationTests.swift */; };
 		B77004B12B44472A00E7EEBA /* NavigationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77004B02B44472A00E7EEBA /* NavigationUITests.swift */; };
 		B77004B32B44472A00E7EEBA /* NavigationUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77004B22B44472A00E7EEBA /* NavigationUITestsLaunchTests.swift */; };
+		B77004C22B444E0F00E7EEBA /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77004C12B444E0F00E7EEBA /* EditViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		B77004AC2B44472A00E7EEBA /* NavigationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NavigationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B77004B02B44472A00E7EEBA /* NavigationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationUITests.swift; sourceTree = "<group>"; };
 		B77004B22B44472A00E7EEBA /* NavigationUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B77004C12B444E0F00E7EEBA /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				B77004982B44472900E7EEBA /* Assets.xcassets */,
 				B770049A2B44472900E7EEBA /* LaunchScreen.storyboard */,
 				B770049D2B44472900E7EEBA /* Info.plist */,
+				B77004C12B444E0F00E7EEBA /* EditViewController.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B77004C22B444E0F00E7EEBA /* EditViewController.swift in Sources */,
 				B77004942B44472700E7EEBA /* ViewController.swift in Sources */,
 				B77004902B44472700E7EEBA /* AppDelegate.swift in Sources */,
 				B77004922B44472700E7EEBA /* SceneDelegate.swift in Sources */,
