@@ -9,32 +9,43 @@ import UIKit
 
 protocol EditDelegate {
     func didMessageEditDone(_ contoroller: EditViewController, message: String)
+    func didImageOnOff(_ controller: EditViewController, isOn: Bool)
 }
 
 class EditViewController: UIViewController {
     var textWayValue : String = ""
     var textMessage : String = ""
     var delegate : EditDelegate?
+    var isOn = false
     
     @IBOutlet var txtMessage: UITextField!
-    @IBOutlet var swisOn: UISwitch!
+    @IBOutlet var swIsOn: UISwitch!
     @IBOutlet var lblWay: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         lblWay.text = textWayValue
         txtMessage.text = textMessage
+        swIsOn.isOn = isOn
     }
     
     @IBAction func btnDone(_ sender: UIButton) {
         //데이터를 메인화면으로 전달
         if delegate != nil {
             delegate?.didMessageEditDone(self, message: txtMessage.text!)
+            delegate?.didImageOnOff(self, isOn: isOn)
         }
         
         _ = navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func swImageOnOff(_ sender: UISwitch) {
+        if sender.isOn{
+            isOn = true
+        }else{
+            isOn = false
+        }
+    }
     /*
     // MARK: - Navigation
 
