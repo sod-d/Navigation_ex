@@ -59,14 +59,24 @@
                                     <action selector="swImageOnOff:" destination="WHK-Sm-tTa" eventType="valueChanged" id="v7b-X5-LJo"/>
                                 </connections>
                             </switch>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CpM-w2-sQD">
+                                <rect key="frame" x="223" y="113" width="54" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="축소"/>
+                                <connections>
+                                    <action selector="ZoomInOut:" destination="WHK-Sm-tTa" eventType="touchUpInside" id="42I-lS-kHd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jfq-CL-DX4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="수정화면" id="qe1-SW-dly"/>
                     <connections>
+                        <outlet property="BtnZoom" destination="CpM-w2-sQD" id="NZL-xh-0VV"/>
                         <outlet property="lblWay" destination="hX2-jC-XUP" id="QGH-ti-nin"/>
-                        <outlet property="swIsOn" destination="7Rw-N7-jJY" id="wpK-Zm-OVa"/>
+                        <outlet property="swIsOn" destination="7Rw-N7-jJY" id="udd-W3-jKF"/>
                         <outlet property="txtMessage" destination="pc1-CB-MvK" id="jQN-kl-8Rr"/>
                     </connections>
                 </viewController>

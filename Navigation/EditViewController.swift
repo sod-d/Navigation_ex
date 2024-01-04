@@ -10,6 +10,7 @@ import UIKit
 protocol EditDelegate {
     func didMessageEditDone(_ contoroller: EditViewController, message: String)
     func didImageOnOff(_ controller: EditViewController, isOn: Bool)
+    func didImageZommDone(_ controller: EditViewController, isZoom: BooleanLiteralType)
 }
 
 class EditViewController: UIViewController {
@@ -17,8 +18,10 @@ class EditViewController: UIViewController {
     var textMessage : String = ""
     var delegate : EditDelegate?
     var isOn = false
+    var isZoom = false
     
     @IBOutlet var txtMessage: UITextField!
+    @IBOutlet var BtnZoom: UIButton!
     @IBOutlet var swIsOn: UISwitch!
     @IBOutlet var lblWay: UILabel!
     override func viewDidLoad() {
@@ -37,6 +40,13 @@ class EditViewController: UIViewController {
         }
         
         _ = navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func ZoomInOut(_ sender: UIButton) {
+        if sender.isZoom {
+            
+        }
+        
     }
     
     @IBAction func swImageOnOff(_ sender: UISwitch) {

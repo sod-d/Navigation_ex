@@ -9,11 +9,11 @@ import UIKit
 
 class ViewController: UIViewController, EditDelegate {
     
-    
     let imgOn = UIImage(named: "lamp_on.png")
     let imgOff = UIImage(named: "lamp_off.png")
     
     var isOn = true
+    var isZoom = true
     
     @IBOutlet var imgView: UIImageView!
     @IBOutlet var txtMessage: UITextField!
@@ -55,6 +55,21 @@ class ViewController: UIViewController, EditDelegate {
             imgView.image = imgOff
             self.isOn = false
         }
+    }
+    
+    func didImageZommDone(_ controller: EditViewController, isZoom: BooleanLiteralType) {
+        let scale:CGFloat = 2.0
+        var widthImg, heightImg:CGFloat
+        
+        if isZoom {
+            widthImg = imgView.frame.width/scale
+            heightImg = imgView.frame.height/scale
+        }else{
+            widthImg = imgView.frame.width*scale
+            heightImg = imgView.frame.height*scale
+        }
+        imgView.frame.size = CGSize(width: widthImg, height: heightImg)
+        isZOom = !isZoom
     }
 
 }
