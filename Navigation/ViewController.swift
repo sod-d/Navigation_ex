@@ -13,7 +13,8 @@ class ViewController: UIViewController, EditDelegate {
     let imgOff = UIImage(named: "lamp_off.png")
     
     var isOn = true
-    var isZoom = true
+    var isZoom = false
+    var orgZoom = false
     
     @IBOutlet var imgView: UIImageView!
     @IBOutlet var txtMessage: UITextField!
@@ -38,6 +39,7 @@ class ViewController: UIViewController, EditDelegate {
         //데이터를 editViewDontroller 으로 전달
         editViewController.textMessage = txtMessage.text!
         editViewController.isOn = isOn
+        editViewController.isZoom = orgZoom
         editViewController.delegate = self
     }
     
@@ -57,19 +59,31 @@ class ViewController: UIViewController, EditDelegate {
         }
     }
     
-    func didImageZommDone(_ controller: EditViewController, isZoom: BooleanLiteralType) {
+    func didImageZomDone(_ controller: EditViewController, isZoom: Bool) {
         let scale:CGFloat = 2.0
-        var widthImg, heightImg:CGFloat
-        
+        var newWidth:CGFloat, newHeight:CGFloat
+
         if isZoom {
-            widthImg = imgView.frame.width/scale
-            heightImg = imgView.frame.height/scale
-        }else{
-            widthImg = imgView.frame.width*scale
-            heightImg = imgView.frame.height*scale
+            if !orgZoom {
+                self.isZoom = false
+                self.orgZoom = true
+                newWidth = imgView.frame.width*scale
+                newHeight = imgView.frame.height*scale
+                imgView.frame.size = CGSize(width: newWidth, height: newHeight)
+            }
+
+            print("Zoom: true")
+        } else {
+            if orgZoom  {
+                self.isZoom = true
+                self.orgZoom = false
+                newWidth = imgView.frame.width/scale
+                newHeight = imgView.frame.height/scale
+                imgView.frame.size = CGSize(width: newWidth, height: newHeight)
+            }
+            print("Zoom: false")
         }
-        imgView.frame.size = CGSize(width: widthImg, height: heightImg)
-        isZOom = !isZoom
+        
     }
 
 }
